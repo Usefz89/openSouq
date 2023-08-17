@@ -72,19 +72,14 @@ class CategoriesViewController: UICollectionViewController {
         let category = categories[indexPath.row]
         
         //kf image proccesing
+        
         let url = URL(string: category.picture)
-        let processor = DownsamplingImageProcessor(size: cell.imageView.bounds.size)
-                     |> RoundCornerImageProcessor(cornerRadius: 20)
         cell.imageView.kf.indicatorType = .activity
         cell.imageView.kf.setImage(
             with: url,
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(0.5)),
-                .cacheOriginalImage
-            ])
+            placeholder: UIImage(named: "placeholderImage")
+        )
+
        
         
         //Set label
@@ -113,18 +108,19 @@ class CategoriesViewController: UICollectionViewController {
         if !category.isLastChild || category.subProductCategoriesCount != 0  {
             navigationController?.pushViewController(categoriesVC, animated: true)
         } else {
-            self.showToast(message: "Your Toast Message", font: .systemFont(ofSize: 12.0))
+            self.showToast(message: "this is last category", font: .systemFont(ofSize: 12.0))
             
         }
     }
         
-    //Make customization for the navigation bar
+    //Make customization to the Navigation bar
     func customizeNavigationBar() {
         if let navigationController = navigationController,
            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let statusBarFrame = windowScene.statusBarManager?.statusBarFrame {
             let statusBarView = UIView(frame: statusBarFrame)
             statusBarView.backgroundColor = navigationController.navigationBar.backgroundColor
+            
             view.addSubview(statusBarView)
             
             // Add image to the navigation bar
@@ -132,11 +128,6 @@ class CategoriesViewController: UICollectionViewController {
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFit
             navigationItem.titleView = imageView
-            
-            // Add back button image
-            self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backImage")
-                self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backImage")
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
             
             //Language Button configaration
             if isEnglish {
@@ -178,9 +169,7 @@ class CategoriesViewController: UICollectionViewController {
                 self.collectionView.reloadData()
             }
         } catch {
-            
+            print("Error: \(error.localizedDescription)")
         }
-        
     }
-
 }
