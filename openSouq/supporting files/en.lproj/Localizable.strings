@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  openSouq
+
+  Created by Yousef Zuriqi on 17/08/2023.
+  
+*/
+
+"alertTitle" = "Restart the app";
+"alertDescription" = "You have to reset the app in order to change language";
+"ok" = "OK";

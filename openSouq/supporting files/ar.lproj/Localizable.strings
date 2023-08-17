@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  openSouq
+
+  Created by Yousef Zuriqi on 17/08/2023.
+  
+*/
+
+"alertTitle" = "أعد تشغيل البرنامج";
+"alertDescription" = "أعد تشغيل البرنامج لضبط اعدادت اللغه";
+"ok" = "حسنا";
