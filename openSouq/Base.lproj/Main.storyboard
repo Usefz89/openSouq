@@ -18,6 +18,9 @@
                         <color key="backgroundColor" red="0.18823529410000001" green="0.24313725489999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBarAppearance key="standardAppearance">
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </textAttributes>
                             <barButtonItemAppearance key="backButtonAppearance">
                                 <barButtonItemStateAppearance key="normal">
                                     <textAttributes key="titleTextAttributes">

@@ -28,7 +28,6 @@ class CategoriesViewController: UICollectionViewController {
       )
     
     @IBOutlet weak var langButton: UIBarButtonItem!
-    
     @IBAction func tapLangButton(_ sender: UIBarButtonItem) {
         changeLanguageInterface()
     }
@@ -36,7 +35,6 @@ class CategoriesViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.overrideUserInterfaceStyle = .light
-
         // Change the status bar color to match the navigation bar
         customizeNavigationBar()
         
@@ -49,7 +47,6 @@ class CategoriesViewController: UICollectionViewController {
         // Customize the collectionView
         collectionView?.collectionViewLayout = columnLayout
         collectionView?.contentInsetAdjustmentBehavior = .always
-//        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
         // Fetch the data
         Task {
@@ -111,6 +108,10 @@ class CategoriesViewController: UICollectionViewController {
         categoriesVC.request = request
         
         if !category.isLastChild || category.subProductCategoriesCount != 0  {
+            categoriesVC.title = isEnglish ? category.nameEn : category.nameAr
+            let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            
+            categoriesVC.navigationController?.navigationBar.titleTextAttributes = textAttributes
             navigationController?.pushViewController(categoriesVC, animated: true)
         } else {
             self.showToast(message: "this is last category", font: .systemFont(ofSize: 14))
@@ -120,30 +121,32 @@ class CategoriesViewController: UICollectionViewController {
         
     //Make customization to the Navigation bar
     func customizeNavigationBar() {
+        
+        // Extend the navigation bar color to status bar
         if let navigationController = navigationController,
            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let statusBarFrame = windowScene.statusBarManager?.statusBarFrame {
             let statusBarView = UIView(frame: statusBarFrame)
             statusBarView.backgroundColor = navigationController.navigationBar.backgroundColor
-            
             view.addSubview(statusBarView)
             
-            // Add image to the navigation bar
-            let image = UIImage(named: "top_bar_logo")
-            let imageView = UIImageView(image: image)
-            imageView.contentMode = .scaleAspectFit
-            navigationItem.titleView = imageView
-            
+            // Add image to the navigation
+            if self == navigationController.viewControllers.first {
+                let image = UIImage(named: "top_bar_logo")
+                let imageView = UIImageView(image: image)
+                imageView.contentMode = .scaleAspectFit
+                navigationItem.titleView = imageView
+            }else {
+                navigationItem.titleView = nil
+            }
+           
             //Language Button configaration
             if isEnglish {
                 langButton.title = "عربي"
-
             } else {
                 langButton.title = "English"
             }
-            
             langButton.tintColor = .white
-    
         }
     }
     
