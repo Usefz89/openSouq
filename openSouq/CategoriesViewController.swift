@@ -152,8 +152,11 @@ class CategoriesViewController: UICollectionViewController {
         // Make alert
         let alert = UIAlertController(title: NSLocalizedString("alertTitle", comment: ""), message: NSLocalizedString("alertDescription", comment: ""), preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) {_ in
+            exit(0)
+        })
         self.present(alert, animated: true, completion: nil)
+        
 
     }
     

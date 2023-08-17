@@ -7,5 +7,5 @@
 */
 
 "alertTitle" = "Restart the app";
-"alertDescription" = "You have to reset the app in order to change language";
+"alertDescription" = "the app will be closed to change the language please reopen";
 "ok" = "OK";
