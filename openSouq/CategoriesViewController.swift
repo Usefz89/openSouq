@@ -33,13 +33,19 @@ class CategoriesViewController: UICollectionViewController {
         changeLanguageInterface()
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.overrideUserInterfaceStyle = .light
+
         // Change the status bar color to match the navigation bar
         customizeNavigationBar()
         
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         // Customize the collectionView
         collectionView?.collectionViewLayout = columnLayout
         collectionView?.contentInsetAdjustmentBehavior = .always
@@ -50,7 +56,6 @@ class CategoriesViewController: UICollectionViewController {
             await fetchData(request: request)
         }
     }
-
 
     // MARK: UICollectionViewDataSource
 
@@ -108,7 +113,7 @@ class CategoriesViewController: UICollectionViewController {
         if !category.isLastChild || category.subProductCategoriesCount != 0  {
             navigationController?.pushViewController(categoriesVC, animated: true)
         } else {
-            self.showToast(message: "this is last category", font: .systemFont(ofSize: 12.0))
+            self.showToast(message: "this is last category", font: .systemFont(ofSize: 14))
             
         }
     }

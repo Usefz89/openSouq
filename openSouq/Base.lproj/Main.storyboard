@@ -63,16 +63,17 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZ0-fd-rfX">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="107"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xdy-w9-lUv">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xdy-w9-lUv">
                                             <rect key="frame" x="0.0" y="110" width="97" height="18"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="HUN-mL-qGd"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="HUN-mL-qGd"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="xdy-w9-lUv" secondAttribute="trailing" id="12j-zc-8kb"/>
                                         <constraint firstItem="mZ0-fd-rfX" firstAttribute="leading" secondItem="X6i-TO-SXc" secondAttribute="leading" id="178-qU-4be"/>
