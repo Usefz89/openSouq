@@ -27,6 +27,14 @@ struct Category: Codable {
     let disabled: Bool
     let isLastChild: Bool
     
+    var nameByLang: String {
+         Constants.isEnglish ? nameEn : nameAr
+    }
+    
+    var parentNameByLang: String {
+        Constants.isEnglish ? parentNameEn : parentNameAr
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case productCategoryId = "ProductCategoryId"
         case nameAr = "NameAr"

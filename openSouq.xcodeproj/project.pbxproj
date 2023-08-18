@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78BE3D702A8EC3E800E73E7B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE3D6F2A8EC3E700E73E7B /* Constants.swift */; };
+		78BE3D722A8F761D00E73E7B /* Extension++Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE3D712A8F761C00E73E7B /* Extension++Foundation.swift */; };
 		78E582FC2A8DFE5E00E053EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E582FB2A8DFE5E00E053EA /* AppDelegate.swift */; };
 		78E582FE2A8DFE5E00E053EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E582FD2A8DFE5E00E053EA /* SceneDelegate.swift */; };
 		78E583032A8DFE5E00E053EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E583012A8DFE5E00E053EA /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78BE3D6F2A8EC3E700E73E7B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		78BE3D712A8F761C00E73E7B /* Extension++Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension++Foundation.swift"; sourceTree = "<group>"; };
 		78E582F82A8DFE5E00E053EA /* openSouq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openSouq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E582FB2A8DFE5E00E053EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78E582FD2A8DFE5E00E053EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				78E583262A8E1B1900E053EA /* CategoriesViewController.swift */,
+				78BE3D6F2A8EC3E700E73E7B /* Constants.swift */,
 				78E5832F2A8E31C000E053EA /* CategoriesViewFlowLayout.swift */,
 				78E5832B2A8E1CB200E053EA /* CategoryViewCell.swift */,
 				78E583122A8DFF9300E053EA /* Category.swift */,
@@ -156,6 +161,7 @@
 			children = (
 				78E583402A8E578400E053EA /* Extension++UITraitCollection.swift */,
 				78E583362A8E48DD00E053EA /* Extension++UIViewController.swift */,
+				78BE3D712A8F761C00E73E7B /* Extension++Foundation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E583372A8E48DD00E053EA /* Extension++UIViewController.swift in Sources */,
+				78BE3D702A8EC3E800E73E7B /* Constants.swift in Sources */,
 				78E583302A8E31C000E053EA /* CategoriesViewFlowLayout.swift in Sources */,
 				78E583272A8E1B1900E053EA /* CategoriesViewController.swift in Sources */,
 				78E583152A8E019C00E053EA /* APIManager.swift in Sources */,
@@ -254,6 +261,7 @@
 				78E582FC2A8DFE5E00E053EA /* AppDelegate.swift in Sources */,
 				78E5831B2A8E087F00E053EA /* RequestManager.swift in Sources */,
 				78E5831E2A8E0D5800E053EA /* RequestCategory.swift in Sources */,
+				78BE3D722A8F761D00E73E7B /* Extension++Foundation.swift in Sources */,
 				78E583222A8E0DEA00E053EA /* RequestType.swift in Sources */,
 				78E583172A8E065200E053EA /* DataParser.swift in Sources */,
 				78E582FE2A8DFE5E00E053EA /* SceneDelegate.swift in Sources */,
