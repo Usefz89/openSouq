@@ -95,7 +95,7 @@ class CategoriesViewController: UICollectionViewController {
         )
 
         //Set label configurations
-        cell.label.text = "\(category.nameByLang) (\(category.subProductCategoriesCount))".localizedUppercase
+        cell.label.text = "\(category.nameByLang) (\(category.subProductCategoriesCount))".capitalized
         cell.label.font = Constants.customFont
         return cell
     }
