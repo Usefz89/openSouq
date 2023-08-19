@@ -15,6 +15,8 @@ class CategoriesViewController: UICollectionViewController {
     let requestManager = RequestManager()
     var categories: [Category] = []
     var request: RequestProtocol = RequestCategory()
+    var languageManager = LanguageManager.shared
+    
 
     lazy var columnLayout = CategoriesViewFlowLayout(
         cellsPerRow: Constants.noOfRows,
@@ -42,12 +44,30 @@ class CategoriesViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .languageChanged, object: nil)
+
         // Customize the collectionView
         collectionView?.collectionViewLayout = columnLayout
         collectionView?.contentInsetAdjustmentBehavior = .always
         // Fetch the data
         Task { await fetchData(request: request) }
     }
+    
+    // change langbutton language and reload collectionview data
+    @objc func languageChanged() {
+        self.langButton.title = localizedString(for: "langButton")
+        collectionView.reloadData()
+        
+    }
+    
+    // use localized string to chagne language
+    func localizedString(for key: String) -> String {
+        let language = LanguageManager.shared.currentLanguage
+        let path = Bundle.main.path(forResource: language, ofType: "lproj")!
+        let bundle = Bundle(path: path)!
+        return NSLocalizedString(key, bundle: bundle, comment: "")
+    }
+
 
     // MARK: UICollectionViewDataSource
 
@@ -75,7 +95,7 @@ class CategoriesViewController: UICollectionViewController {
         )
 
         //Set label configurations
-        cell.label.text = "\(Constants.isEnglish ? category.nameEn : category.nameAr) (\(category.subProductCategoriesCount))"
+        cell.label.text = "\(category.nameByLang) (\(category.subProductCategoriesCount))"
         cell.label.font = Constants.customFont
         
         return cell
@@ -95,13 +115,14 @@ class CategoriesViewController: UICollectionViewController {
         //navigate if is not the last category
         if !category.isLastChild || category.subProductCategoriesCount != 0  {
             categoriesVC.title = category.nameByLang
+
             let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
             categoriesVC.navigationController?.navigationBar.titleTextAttributes = textAttributes
             navigationController?.pushViewController(categoriesVC, animated: true)
         } else {
             //show toast msg if it's last child
-            self.showToast(message: "This is last category", font: Constants.customFont)
+            self.showToast(message: localizedString(for: "lastCategory"), font: Constants.customFont)
         }
     }
         
@@ -122,34 +143,40 @@ class CategoriesViewController: UICollectionViewController {
                 let imageView = UIImageView(image: image)
                 imageView.contentMode = .scaleAspectFit
                 navigationItem.titleView = imageView
+                langButton.title = localizedString(for: "langButton")
+                langButton.tintColor = .white
             }else {
                 navigationItem.titleView = nil
+                navigationItem.setRightBarButton(nil, animated: true)
             }
            
             //Language Button configaration
-            langButton.title = localizedString("langButton")
-            langButton.tintColor = .white
+           
         }
     }
     
     // Change the language interface
     func changeLanguageInterface() {
-        let currentLanguage = Locale.current.languageCode
-        let selectedLanguage = currentLanguage == "en" ? "ar" : "en"
-        UserDefaults.standard.set([selectedLanguage], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
+        languageManager.setLanguage()
+        collectionView.reloadData()
+        print(LanguageManager.shared.currentLanguage)
         
-        // Make alert
-        let alert = UIAlertController(
-            title: localizedString("alertTitle"),
-            message: localizedString("alertDescription"),
-            preferredStyle: .alert
-        )
-        // Add alert action
-        alert.addAction(UIAlertAction(title: localizedString("ok"), style: .default) {_ in
-            exit(0)
-        })
-        self.present(alert, animated: true, completion: nil)
+//        let currentLanguage = Locale.current.languageCode
+//        let selectedLanguage = currentLanguage == "en" ? "ar" : "en"
+//        UserDefaults.standard.set([selectedLanguage], forKey: "AppleLanguages")
+//        UserDefaults.standard.synchronize()
+//
+//        // Make alert
+//        let alert = UIAlertController(
+//            title: localizedString(for: "alertTitle"),
+//            message: localizedString(for: "alertDescription"),
+//            preferredStyle: .alert
+//        )
+//        // Add alert action
+//        alert.addAction(UIAlertAction(title: localizedString(for: "ok"), style: .default) {_ in
+//            self.collectionView.reloadData()
+//        })
+//        self.present(alert, animated: true, completion: nil)
     }
     
     //Fetch data from API

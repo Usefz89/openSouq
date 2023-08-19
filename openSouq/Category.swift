@@ -28,11 +28,11 @@ struct Category: Codable {
     let isLastChild: Bool
     
     var nameByLang: String {
-         Constants.isEnglish ? nameEn : nameAr
+        LanguageManager.shared.currentLanguage == "en" ? nameEn : nameAr
     }
     
     var parentNameByLang: String {
-        Constants.isEnglish ? parentNameEn : parentNameAr
+        Constants.isNewEnglish ? parentNameEn : parentNameAr
     }
     
     private enum CodingKeys: String, CodingKey {

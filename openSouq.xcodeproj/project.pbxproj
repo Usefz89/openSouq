@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7817A3B82A91099900C9BCED /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817A3B72A91099900C9BCED /* LanguageManager.swift */; };
 		78BE3D702A8EC3E800E73E7B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE3D6F2A8EC3E700E73E7B /* Constants.swift */; };
 		78BE3D722A8F761D00E73E7B /* Extension++Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE3D712A8F761C00E73E7B /* Extension++Foundation.swift */; };
 		78E582FC2A8DFE5E00E053EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E582FB2A8DFE5E00E053EA /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7817A3B72A91099900C9BCED /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		78BE3D6F2A8EC3E700E73E7B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		78BE3D712A8F761C00E73E7B /* Extension++Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension++Foundation.swift"; sourceTree = "<group>"; };
 		78E582F82A8DFE5E00E053EA /* openSouq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openSouq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +99,9 @@
 		78E582FA2A8DFE5E00E053EA /* openSouq */ = {
 			isa = PBXGroup;
 			children = (
+				78E5833E2A8E4B3900E053EA /* Localizable.strings */,
 				78E583262A8E1B1900E053EA /* CategoriesViewController.swift */,
+				7817A3B72A91099900C9BCED /* LanguageManager.swift */,
 				78BE3D6F2A8EC3E700E73E7B /* Constants.swift */,
 				78E5832F2A8E31C000E053EA /* CategoriesViewFlowLayout.swift */,
 				78E5832B2A8E1CB200E053EA /* CategoryViewCell.swift */,
@@ -116,7 +120,6 @@
 		78E5830F2A8DFEA100E053EA /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				78E5833E2A8E4B3900E053EA /* Localizable.strings */,
 				78E582FB2A8DFE5E00E053EA /* AppDelegate.swift */,
 				78E582FD2A8DFE5E00E053EA /* SceneDelegate.swift */,
 				78E583062A8DFE5F00E053EA /* LaunchScreen.storyboard */,
@@ -250,6 +253,7 @@
 				78E583372A8E48DD00E053EA /* Extension++UIViewController.swift in Sources */,
 				78BE3D702A8EC3E800E73E7B /* Constants.swift in Sources */,
 				78E583302A8E31C000E053EA /* CategoriesViewFlowLayout.swift in Sources */,
+				7817A3B82A91099900C9BCED /* LanguageManager.swift in Sources */,
 				78E583272A8E1B1900E053EA /* CategoriesViewController.swift in Sources */,
 				78E583152A8E019C00E053EA /* APIManager.swift in Sources */,
 				78E583192A8E07B600E053EA /* NetworkError.swift in Sources */,

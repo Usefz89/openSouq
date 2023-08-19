@@ -10,3 +10,4 @@
 "alertDescription" = "the app will be closed to change the language please reopen";
 "ok" = "OK";
 "langButton" = "English";
+"lastCategory" = "This is the last category";
