@@ -44,6 +44,8 @@ class CategoriesViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .languageChanged, object: nil)
 
         // Customize the collectionView
@@ -63,9 +65,13 @@ class CategoriesViewController: UICollectionViewController {
     // use localized string to chagne language
     func localizedString(for key: String) -> String {
         let language = LanguageManager.shared.currentLanguage
-        let path = Bundle.main.path(forResource: language, ofType: "lproj")!
-        let bundle = Bundle(path: path)!
-        return NSLocalizedString(key, bundle: bundle, comment: "")
+        
+        if let path = Bundle.main.path(forResource: language, ofType: "lproj"), let bundle = Bundle(path: path) {
+            return NSLocalizedString(key, bundle: bundle, comment: "")
+        } else {
+            return NSLocalizedString(key, comment: "")
+        }
+       
     }
 
 
@@ -88,15 +94,19 @@ class CategoriesViewController: UICollectionViewController {
         
         //kf image fetching
         let url = URL(string: category.picture)
-        cell.imageView.kf.indicatorType = .activity
-        cell.imageView.kf.setImage(
+//        cell.imageView.kf.indicatorType = .activity
+        
+//        cell.imageView.kf.setImage(
+//            with: url,
+//            placeholder: UIImage(named: "placeholderImage")
+//        )
+        cell.myImageView.kf.indicatorType = .activity
+        cell.myImageView.kf.setImage(
             with: url,
             placeholder: UIImage(named: "placeholderImage")
         )
-
-        //Set label configurations
-        cell.label.text = "\(category.nameByLang) (\(category.subProductCategoriesCount))".capitalized
-        cell.label.font = Constants.customFont
+        cell.myLabel.text = "\(category.nameByLang) (\(category.subProductCategoriesCount))".capitalized
+        
         return cell
     }
     

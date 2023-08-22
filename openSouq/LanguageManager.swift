@@ -9,7 +9,7 @@ import Foundation
 
 class LanguageManager {
     static let shared = LanguageManager()
-    var currentLanguage: String = Locale.preferredLanguages.first ?? "en" {
+    var currentLanguage: String = "en" {
         didSet {
             NotificationCenter.default.post(name: .languageChanged, object: nil)
         }

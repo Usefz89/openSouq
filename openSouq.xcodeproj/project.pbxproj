@@ -99,7 +99,6 @@
 		78E582FA2A8DFE5E00E053EA /* openSouq */ = {
 			isa = PBXGroup;
 			children = (
-				78E5833E2A8E4B3900E053EA /* Localizable.strings */,
 				78E583262A8E1B1900E053EA /* CategoriesViewController.swift */,
 				7817A3B72A91099900C9BCED /* LanguageManager.swift */,
 				78BE3D6F2A8EC3E700E73E7B /* Constants.swift */,
@@ -120,6 +119,7 @@
 		78E5830F2A8DFEA100E053EA /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				78E5833E2A8E4B3900E053EA /* Localizable.strings */,
 				78E582FB2A8DFE5E00E053EA /* AppDelegate.swift */,
 				78E582FD2A8DFE5E00E053EA /* SceneDelegate.swift */,
 				78E583062A8DFE5F00E053EA /* LaunchScreen.storyboard */,
