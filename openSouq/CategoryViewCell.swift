@@ -46,11 +46,8 @@ class CategoryViewCell: UICollectionViewCell {
           imageView.addSubview(label)
           label.textColor = .white
           label.font = Constants.customFont
-          
-          imageView.layer.cornerRadius = imageView.frame.height/2
-
-          imageView.clipsToBounds = true
-          
+          label.numberOfLines = 0
+                    
           NSLayoutConstraint.activate([
               imageView.topAnchor.constraint(equalTo: topAnchor),
               imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -59,7 +56,9 @@ class CategoryViewCell: UICollectionViewCell {
               
               // Position the label inside the image view as needed
               label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-              label.centerYAnchor.constraint(equalTo: imageView.centerYAnchor, constant: 70)
+              label.centerYAnchor.constraint(equalTo: imageView.centerYAnchor, constant: 70),
+              label.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+              label.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
           ])
           
 
