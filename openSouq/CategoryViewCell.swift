@@ -9,18 +9,24 @@ import UIKit
 
 class CategoryViewCell: UICollectionViewCell {
     
-//    @IBOutlet weak var imageView: UIImageView!
-//
-//    @IBOutlet weak var label: UILabel!
     
-    let myImageView: UIImageView = {
+    let imageView: UIImageView = {
           let imageView = UIImageView()
           imageView.contentMode = .scaleAspectFit
           imageView.translatesAutoresizingMaskIntoConstraints = false
           return imageView
       }()
+    
+    let shadowImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "shadow")
+        return imageView
+        
+    }()
       
-      let myLabel: UILabel = {
+      let label: UILabel = {
           let label = UILabel()
           label.textAlignment = .center
           label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,28 +41,27 @@ class CategoryViewCell: UICollectionViewCell {
      }
       
       func setupViews() {
-          addSubview(myImageView)
-          myImageView.addSubview(myLabel)
-          myLabel.textColor = .black
-          myLabel.font = Constants.customFont
+          addSubview(imageView)
+          imageView.addSubview(shadowImageView)
+          imageView.addSubview(label)
+          label.textColor = .white
+          label.font = Constants.customFont
+          
+          imageView.layer.cornerRadius = imageView.frame.height/2
+
+          imageView.clipsToBounds = true
           
           NSLayoutConstraint.activate([
-              myImageView.topAnchor.constraint(equalTo: topAnchor),
-              myImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-              myImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-              myImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+              imageView.topAnchor.constraint(equalTo: topAnchor),
+              imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+              imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+              imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
               
               // Position the label inside the image view as needed
-              myLabel.centerXAnchor.constraint(equalTo: myImageView.centerXAnchor),
-              myLabel.centerYAnchor.constraint(equalTo: myImageView.centerYAnchor, constant: 70)
+              label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+              label.centerYAnchor.constraint(equalTo: imageView.centerYAnchor, constant: 70)
           ])
           
-          // Add shadow
-          layer.shadowColor = UIColor.black.cgColor // Shadow color
-             layer.shadowOpacity = 0.5 // Shadow opacity
-             layer.shadowOffset = CGSize(width: 0, height: 2) // Shadow offset
-             layer.shadowRadius = 4 // Shadow radius
-             layer.masksToBounds = false // Important to allow shadow to be drawn outside the bounds
 
           
       }

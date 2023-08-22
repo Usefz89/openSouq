@@ -94,14 +94,21 @@ class CategoriesViewController: UICollectionViewController {
         
         //kf image fetching
         let url = URL(string: category.picture)
-        cell.myImageView.kf.indicatorType = .activity
-        cell.myImageView.kf.setImage(
+        // modify the placeholerimage
+        
+        cell.imageView.kf.indicatorType = .activity
+        cell.imageView.kf.setImage(
             with: url,
-            placeholder: UIImage(named: "placeholderImage")
+            placeholder: UIImage(named: "cat_no_img")
         )
+        
+        
+
+        
+
         // Remove the spaces at end of string.
         let name = category.nameByLang.trimmingCharacters(in: .whitespaces)
-        cell.myLabel.text = "\(name) (\(category.subProductCategoriesCount))".capitalized
+        cell.label.text = "\(name) (\(category.subProductCategoriesCount))".capitalized
         
         return cell
     }

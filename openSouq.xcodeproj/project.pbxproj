@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7817A3B82A91099900C9BCED /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817A3B72A91099900C9BCED /* LanguageManager.swift */; };
+		78A09F062A94D50200299DA0 /* Extension++UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A09F052A94D50200299DA0 /* Extension++UIImageView.swift */; };
 		78BE3D702A8EC3E800E73E7B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE3D6F2A8EC3E700E73E7B /* Constants.swift */; };
 		78BE3D722A8F761D00E73E7B /* Extension++Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE3D712A8F761C00E73E7B /* Extension++Foundation.swift */; };
 		78E582FC2A8DFE5E00E053EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E582FB2A8DFE5E00E053EA /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		7817A3B72A91099900C9BCED /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		78A09F052A94D50200299DA0 /* Extension++UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension++UIImageView.swift"; sourceTree = "<group>"; };
 		78BE3D6F2A8EC3E700E73E7B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		78BE3D712A8F761C00E73E7B /* Extension++Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension++Foundation.swift"; sourceTree = "<group>"; };
 		78E582F82A8DFE5E00E053EA /* openSouq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openSouq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				78E583262A8E1B1900E053EA /* CategoriesViewController.swift */,
+				78A09F052A94D50200299DA0 /* Extension++UIImageView.swift */,
 				7817A3B72A91099900C9BCED /* LanguageManager.swift */,
 				78BE3D6F2A8EC3E700E73E7B /* Constants.swift */,
 				78E5832F2A8E31C000E053EA /* CategoriesViewFlowLayout.swift */,
@@ -264,6 +267,7 @@
 				78E583132A8DFF9300E053EA /* Category.swift in Sources */,
 				78E582FC2A8DFE5E00E053EA /* AppDelegate.swift in Sources */,
 				78E5831B2A8E087F00E053EA /* RequestManager.swift in Sources */,
+				78A09F062A94D50200299DA0 /* Extension++UIImageView.swift in Sources */,
 				78E5831E2A8E0D5800E053EA /* RequestCategory.swift in Sources */,
 				78BE3D722A8F761D00E73E7B /* Extension++Foundation.swift in Sources */,
 				78E583222A8E0DEA00E053EA /* RequestType.swift in Sources */,
