@@ -94,22 +94,17 @@ class CategoriesViewController: UICollectionViewController {
         
         //kf image fetching
         let url = URL(string: category.picture)
-//        cell.imageView.kf.indicatorType = .activity
-        
-//        cell.imageView.kf.setImage(
-//            with: url,
-//            placeholder: UIImage(named: "placeholderImage")
-//        )
         cell.myImageView.kf.indicatorType = .activity
         cell.myImageView.kf.setImage(
             with: url,
             placeholder: UIImage(named: "placeholderImage")
         )
-        cell.myLabel.text = "\(category.nameByLang) (\(category.subProductCategoriesCount))".capitalized
+        // Remove the spaces at end of string.
+        let name = category.nameByLang.trimmingCharacters(in: .whitespaces)
+        cell.myLabel.text = "\(name) (\(category.subProductCategoriesCount))".capitalized
         
         return cell
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -133,6 +128,7 @@ class CategoriesViewController: UICollectionViewController {
             //show toast msg if it's last child
             self.showToast(message: localizedString(for: "lastCategory"), font: Constants.customFont)
         }
+        print(category.productCategoryId)
     }
         
     //Make customization to the Navigation bar

@@ -58,7 +58,6 @@ class CategoryViewCell: UICollectionViewCell {
              layer.shadowRadius = 4 // Shadow radius
              layer.masksToBounds = false // Important to allow shadow to be drawn outside the bounds
 
-             // Optional: Add a corner radius and set the shadow path for better performance
           
       }
     
